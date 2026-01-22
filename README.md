@@ -6,7 +6,7 @@
 
 ---
 
-## [cite_start]1. Opis projektu
+## 1. Opis projektu
 
 Celem projektu było stworzenie środowiska Continuous Integration / Continuous Deployment (CI/CD) dla aplikacji webowej opartej na mikroserwisach.
 Aplikacja składa się z:
@@ -17,7 +17,7 @@ Aplikacja składa się z:
 
 Architektura realizuje zasady _12-Factor App_, oddzielając konfigurację od kodu i wykorzystując konteneryzację do zapewnienia spójności środowisk.
 
-## [cite_start]2. Instrukcja uruchomienia [cite: 35]
+## 2. Instrukcja uruchomienia
 
 ### Wymagania
 
@@ -49,7 +49,7 @@ Architektura realizuje zasady _12-Factor App_, oddzielając konfigurację od kod
 
 - Dokumentacja API (Swagger): http://localhost:8000/docs
 
-## [cite_start]3. Opis Pipeline CI/CD
+## 3. Opis Pipeline CI/CD
 
 Projekt wykorzystuje GitHub Actions do automatyzacji procesów.
 
@@ -71,7 +71,7 @@ Uruchamiany po zaakceptowaniu zmian (merge) do main.
 
 3. Publikacja obrazu do GitHub Container Registry (GHCR).
 
-## [cite_start]4. Uzasadnienie decyzji technicznych
+## 4. Uzasadnienie decyzji technicznych
 
 - **Multi-stage build:** Użyto w celu zminimalizowania rozmiaru obrazu produkcyjnego i usunięcia zbędnych zależności kompilacji.
 
