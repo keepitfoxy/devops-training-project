@@ -65,11 +65,14 @@ Uruchamiany przy każdym Pull Requeście do gałęzi main.
 
 Uruchamiany po zaakceptowaniu zmian (merge) do main.
 
-1. Ponowne sprawdzenie jakości (testy).
+1. **Walidacja tagu (Custom Action):** Wykorzystanie własnoręcznie napisanej akcji (`.github/actions/validate-tag`) do sprawdzenia, czy wersja zaczyna się od prefiksu "v".
+2. Ponowne sprawdzenie jakości (testy).
+3. Zbudowanie obrazu Docker (Multi-stage).
+4. Publikacja obrazu do GitHub Container Registry (GHCR).
 
-2. Zbudowanie obrazu Docker (Multi-stage).
+### Realizacja wymagań na ocenę 5.0
 
-3. Publikacja obrazu do GitHub Container Registry (GHCR).
+- **Własna Akcja (Custom Action):** Zaimplementowano akcję typu _composite_, która pełni rolę "Quality Gate" – blokuje pipeline, jeśli tag nie spełnia standardów projektu, zanim zostaną zużyte zasoby na budowanie obrazu.
 
 ## 4. Uzasadnienie decyzji technicznych
 

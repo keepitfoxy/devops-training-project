@@ -1,0 +1,21 @@
+name: "Validate Version Tag"
+description: 'Sprawdza, czy tag zaczyna się od "v", co jest standardem w naszym projekcie.'
+inputs:
+  tag:
+    description: "Tag do sprawdzenia"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Check Tag Format
+      shell: bash
+      run: |
+        TAG="${{ inputs.tag }}"
+        echo "Rozpoczynam walidację tagu: $TAG"
+
+        if [[ "$TAG" != v* ]]; then
+          echo "BŁĄD: Tag musi zaczynać się od 'v' (np. v1.0.0). Otrzymano: $TAG"
+          exit 1
+        else
+          echo "SUKCES: Format tagu jest poprawny."
+        fi
